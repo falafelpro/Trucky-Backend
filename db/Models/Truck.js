@@ -5,10 +5,10 @@ const TruckSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    image: String,
-    speciality: {
+  image: String,
+    specialty: {
       type: String,
-      enum: ["Burger", "Coffee", "Mexican", "Indian", null, ""],
+      enum: ["Burger", "Coffee", "Mexican", "Indian","",null],
     },
     owner: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
     dishes: [
