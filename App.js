@@ -7,6 +7,7 @@ const cors = require("cors");
 const path = require("path");
 const passport = require("passport");
 const { localStrategy, jwtStrategy } = require("./middleware/passport");
+const userRoutes = require("./api/user/user.routes");
 
 const app = express();
 
@@ -22,6 +23,8 @@ passport.use(jwtStrategy);
 app.use(cors());
 
 // Routes
+app.use("/api/", userRoutes);
+
 
 app.use("/assets", express.static(path.join(__dirname, "assets")));
 // add your Routes here
