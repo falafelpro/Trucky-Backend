@@ -2,7 +2,7 @@ const User = require("../../db/model/User");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const { JWT_EXPIRATION_MS, JWT_SECRET } = require("../../config/keys");
-const Profile = require("../../db/model/Profile");
+
 
 
 
