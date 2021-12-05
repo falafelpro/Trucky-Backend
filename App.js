@@ -8,6 +8,10 @@ const path = require("path");
 const passport = require("passport");
 const { localStrategy, jwtStrategy } = require("./middleware/passport");
 
+// Routs
+
+const truckRoutes = require("./api/Truck/truck.routes");
+
 const app = express();
 
 connectDB();
@@ -25,7 +29,8 @@ app.use(cors());
 
 app.use("/assets", express.static(path.join(__dirname, "assets")));
 // add your Routes here
-//app.use("/api", userRoutes);
+app.use("/api/trucks", truckRoutes);
+// app.use("/api", userRoutes);
 
 app.use((req, res, next) =>
   res.status(404).json({ message: "Path not found" })
