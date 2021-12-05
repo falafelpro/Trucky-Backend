@@ -5,7 +5,7 @@ const TruckSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    speciality: {
+    specialty: {
       type: [String],
       enum: ["Burger", "Coffee", "Mexican", "Indian"],
     },
